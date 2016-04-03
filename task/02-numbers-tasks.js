@@ -54,6 +54,7 @@ function getCicleCircumference(radius) {
  *  -3, 3  => 0
  */
 function getAverage(value1, value2) {
+    throw new Error('Not implemented');
     console.log(value1+value2);
     if (value1 + value2 == Infinity){
         return Infinity;
@@ -149,7 +150,7 @@ function getLastDigit(value) {
  * '-525.5'     => -525.5
  */
 function parseNumberFromString(value) {
-   //return parseInt(value*100)/100;
+   //return parseInt(value*100)/100; (^_^) LOL
     return value;
 }
 

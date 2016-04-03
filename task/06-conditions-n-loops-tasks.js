@@ -30,7 +30,15 @@
  *
  */
 function getFizzBuzz(num) {
-    throw new Error('Not implemented');
+    if(num%5 === 0 && num%3 === 0){
+        return "FizzBuzz";
+    }else if(num%5 === 0){
+        return "Buzz";
+    }else if(num%3 === 0){
+        return "Fizz";
+    }else{
+        return num;
+    }
 }
 
 
@@ -46,7 +54,7 @@ function getFizzBuzz(num) {
  *   10 => 3628800
  */
 function getFactorial(n) {
-    throw new Error('Not implemented');
+    return n!==1?getFactorial(n-1)*n:n;
 }
 
 
@@ -63,7 +71,11 @@ function getFactorial(n) {
  *   -1,1  =>  0  ( = -1 + 0 + 1 )
  */
 function getSumBetweenNumbers(n1, n2) {
-    throw new Error('Not implemented');
+    var result = 0;
+    for(var i = n1;i<=n2;i++){
+        result= result+i;
+    }
+    return result;
 }
 
 
@@ -192,7 +204,7 @@ function findFirstSingleChar(str) {
  *
  */
 function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
-    throw new Error('Not implemented');
+    return (isStartIncluded?"[":"(")+Math.min(a,b)+", "+Math.max(a,b)+(isEndIncluded?"]":")");
 }
 
 
@@ -209,7 +221,7 @@ function getIntervalString(a, b, isStartIncluded, isEndIncluded) {
  * 'noon' => 'noon'
  */
 function reverseString(str) {
-    throw new Error('Not implemented');
+    return str.split("").reverse().join("");
 }
 
 
@@ -226,7 +238,7 @@ function reverseString(str) {
  *   34143 => 34143
  */
 function reverseInteger(num) {
-    throw new Error('Not implemented');
+    return (num+"").split("").reverse().join("")
 }
 
 
@@ -252,6 +264,16 @@ function reverseInteger(num) {
  */
 function isCreditCardNumber(ccn) {
     throw new Error('Not implemented');
+
+    return ((ccn+"").split("").map(function (curr, i) {
+        if (i%2!==0){
+            return curr*2>9?(curr*2+"").split("")[0]+(curr*2+"").split("")[1]:0;
+        }else {
+            return curr;
+        }
+    }).reduce(function (sum, curr) {
+        return sum+curr;
+    }))%10===0?true:false;
 }
 
 
@@ -270,7 +292,10 @@ function isCreditCardNumber(ccn) {
  *   165536 (1+6+5+5+3+6 = 26,  2+6 = 8) => 8
  */
 function getDigitalRoot(num) {
-    throw new Error('Not implemented');
+    var semiresult = (num+"").split("").reduce(function (sum, curr) {
+        return sum+parseInt(curr);
+    },(0));
+    return semiresult>9?getDigitalRoot(semiresult):semiresult;
 }
 
 
@@ -356,7 +381,7 @@ function timespanToHumanString(startDate, endDate) {
  *    365, 10 => '365'
  */
 function toNaryString(num, n) {
-    throw new Error('Not implemented');
+    return num.toString(n);
 }
 
 
