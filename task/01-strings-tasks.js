@@ -235,13 +235,13 @@ function encodeToRot13(str) {
     return str.match(/[\D]/g).map(function(curr){
         if(curr.charCodeAt(0)<65){
             return curr;
-        }else if(curr.charCodeAt(0)<96+13 && curr.charCodeAt(0)>90) {
+        }else if(curr.charCodeAt(0)<97+13 && curr.charCodeAt(0)>96) {
             return String.fromCharCode(curr.charCodeAt(0) + 13);
-        }else if(curr.charCodeAt(0)>96+13){
+        }else if(curr.charCodeAt(0)>97+13){
             return String.fromCharCode(curr.charCodeAt(0) - 13);
         }else if(curr.charCodeAt(0)<65+13){
             return String.fromCharCode(curr.charCodeAt(0) + 13);
-        }else if(curr.charCodeAt(0)>65+13){
+        }else if(curr.charCodeAt(0)>64+13){
             return String.fromCharCode(curr.charCodeAt(0) - 13);
         }
     }).join("");

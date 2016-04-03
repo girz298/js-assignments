@@ -23,11 +23,6 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
-   // for (var i = 0, len = arr.length;i<len;i++){
-   //    if(arr[i] === value){
-   //       return i;
-   //    }
-   // }
    var pos = -1;
    arr.map(function (curr, i) {
       if(curr === value){
@@ -50,6 +45,7 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
+   throw new Error('Not implemented');
    // var result = [];
    // for (var i = 0;i<len*2;i++){
    //    if(i%2 !== 0 && i!==0){
@@ -58,11 +54,12 @@ function generateOdds(len) {
    // }
    // return result;
    console.log(len);
-   var result = new Array(len).map(function (curr, i,arr) {
-      arr[i] = i===0?1:i+2;
-      return i===0?1:i+2;
+   var result = [];
+   Array(len).map(function (curr, i,arr) {
+      result.push(i%2 !==0 && i!==0?i:0);
+      return i%2 !==0 && i!==0?i:0;
    });
-   return len === 0?[]:result;
+   return result;
 }
 
 
@@ -180,7 +177,7 @@ function getStringsLength(arr) {
  *    [ 1, 'b', 'c'], 0, 'x'  => [ 'x', 1, 'b', 'c' ]
  */
 function insertItem(arr, item, index) {
-   throw new Error('Not implemented');
+   return arr.slice(0,index).concat(item,arr.slice(index));
 }
 
 /**
@@ -277,8 +274,9 @@ function toArrayOfSquares(arr) {
  */
 function getMovingSum(arr) {
    return arr.map(function (curr, i, arr) {
-      console.log(arr);
-      return i===0?curr:curr+arr[i-1];
+      return arr.slice(0,i+1).reduce(function (sum, curr) {
+         return sum+curr;
+      });
    });
 }
 
@@ -315,6 +313,8 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
+
+   throw new Error('Not implemented');
    return arr.map(function (curr,i) {
       return Array(i+2).join(curr).match(/\S/g);
    });
@@ -335,6 +335,8 @@ function propagateItemsByPositionIndex(arr) {
  *   [ 10, 10, 10, 10 ] => [ 10, 10, 10 ]
  */
 function get3TopItems(arr) {
+
+   throw new Error('Not implemented');
    return arr.reverse();
 }
  
