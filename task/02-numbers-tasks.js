@@ -168,6 +168,7 @@ function parseNumberFromString(value) {
  *   1,2,3   => 3.741657386773941
  */
 function getParallelipidedDiagonal(a,b,c) {
+    throw new Error('Not implemented');
     console.log( a +"!!!"+b+"!!!"+c);
     return Math.sqrt(Math.sqrt(b*b+a*a)*Math.sqrt(b*b+a*a)+c*c); //HZ HZ
 }
