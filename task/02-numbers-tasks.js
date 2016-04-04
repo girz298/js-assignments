@@ -55,12 +55,10 @@ function getCicleCircumference(radius) {
  */
 function getAverage(value1, value2) {
     throw new Error('Not implemented');
-    console.log(value1+value2);
-    if (value1 + value2 == Infinity){
-        return Infinity;
-    }else {
-        return value1+value2 === 0 ? 0 : (value1+value2)/2 ;
-    }
+    var cout = value1+value2;
+    console.log("---------- \n"+"Value1: "+value1+"\nValue2: "+value2+"\n---------- \n"+
+        "Value1+Value2: "+cout+"\n---------- \n");
+    return value1+value2 === 0 && !(value1+value2<Number.MAX_VALUE)? 0 : (value1+value2)/2 ;
 }
 
 /**
@@ -79,8 +77,8 @@ function getAverage(value1, value2) {
  *   (-5,0) (10,-10) => 18.027756377319946
  */
 function getDistanceBetweenPoints(x1, y1, x2, y2) {
-    //return Math.sqrt((x2-x1)*(x2-x1))*(((y2-y1)*(y2-y1))!==0?((y2-y1)*(y2-y1)):0));
-    throw new Error('Not implemented');
+    return Math.sqrt(Math.pow((-1)*(Math.min(y1,y2)-Math.max(y1,y2)),2)+
+        Math.pow((-1)*(Math.min(x1,x2)-Math.max(x1,x2)),2));
 }
 
 /**
@@ -212,9 +210,12 @@ function roundToPowerOfTen(num, pow) {
  *   17 => true
  */
 function isPrime(n) {
-    // console.log(n+"!!!!!!!!"+n%2);
-    // return n%2 === 0 && n!==2?false:true;
-    throw new Error('Not implemented');
+    for(var i = 1;i<=n;i++){
+        if(n%i===0 & i!==n && i!==1){
+            return false;
+        }
+    }
+    return true;
 }
 
 /**

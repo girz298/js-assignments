@@ -23,14 +23,6 @@
  *    [0, 1, 2, 3, 4, 5], 5    => 5
  */
 function findElement(arr, value) {
-   // var pos = -1;
-   // arr.map(function (curr, i) {
-   //    if(curr === value){
-   //       pos = i;
-   //    }
-   //    return curr;
-   // });
-   // return pos;
    return arr.findIndex(function (curr) {
       return curr === value;
    });
@@ -48,17 +40,8 @@ function findElement(arr, value) {
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
 function generateOdds(len) {
-   throw new Error('Not implemented');
-   // var result = [];
-   // for (var i = 0;i<len*2;i++){
-   //    if(i%2 !== 0 && i!==0){
-   //       result.push(i);
-   //    }
-   // }
-   // return result;
-   console.log(len);
    return Array.from({length:len},function (curr,i,arr) {
-      return i === 0?1:arr[i-1]+2;
+      return i*2+1;
    });
 }
 
@@ -313,8 +296,6 @@ function getSecondItems(arr) {
  *  [ 1,2,3,4,5 ] => [ 1, 2,2, 3,3,3, 4,4,4,4, 5,5,5,5,5 ]
  */
 function propagateItemsByPositionIndex(arr) {
-
-
    throw new Error('Not implemented');
    var result = [];
     return result.concat(arr.map(function (curr,i) {
@@ -516,7 +497,9 @@ function getIdentityMatrix(n) {
  *     3, 3   => [ 3 ]
  */
 function getIntervalArray(start, end) {
-   throw new Error('Not implemented');
+   return Array.from({length:((-1)*(Math.min(start,end)-Math.max(start,end)))+1},function(curr,index,arr){
+      return index+start;
+   });
 }
 
 /**
